@@ -1,0 +1,36 @@
+<div class="tree-item">
+  <a class="pointer" ng-click="toggle(this)" ng-if="item.children.length > 0">
+    <i ng-class="{'icon-folder': collapsed, 'icon-folder-alt': !collapsed}"></i>
+  </a>
+  <span ng-if="!item.children || item.children.length == 0">
+    <i class="icon-doc"></i>
+  </span>
+  <span class="pointer" ng-class="{bold: item.children.length > 0}" ng-click="setItem(item)">
+    {{item.label}}
+  </span>
+  <div class="handle-menu">
+    <ul>
+      <li>
+        <a ui-tree-handle class="btn btn-sx btn-orange">
+          <i class="icon-cursor-move"></i>
+        </a>
+      </li>
+      <li>
+        <a data-nodrag="" ng-click="newSubItem(this)" class="btn btn-sx btn-greensea">
+          <i class="icon-plus"></i>
+        </a>
+      </li>
+      <li>
+        <a data-nodrag="" ng-click="remove(this)" class="btn btn-sx btn-red"><i class="icon-close"></i></a>
+      </li>
+
+    </ul>
+
+
+
+  </div>
+</div>
+<ol ui-tree-nodes="" ng-model="item.children" ng-class="{hidden: collapsed}">
+  <li ng-repeat="item in item.children" ui-tree-node ng-include="'views/includes/ui-tree/menues.html'" ng-class="{active:activeItem == item}">
+  </li>
+</ol>

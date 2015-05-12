@@ -1,0 +1,136 @@
+.page-tree {
+  height: 100%;
+  padding: 0;
+}
+.page-menues {
+  height: 100%;
+  .pageheader {
+    padding: 0;
+    margin-bottom: 0;
+  }
+  .full-height {
+    @media screen and (max-width: 991px) {
+      height: auto;
+    }
+  }
+  .slimScrollDiv {
+    > div:first-child {
+      height: 100% !important;
+    }
+  }
+}
+ul.abn-tree {
+  li {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  i.indented {
+    margin-right: 5px;
+  }
+}
+.ui-tree {
+  padding: 0;
+  li {
+    overflow: hidden;
+    position: relative;
+    a {
+      margin-right: 5px;
+      text-align: center;
+      display: inline-block;
+      color: $lightred;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    span {
+      transition: all 0.15s ease-in-out;
+      &.bold {
+        font-weight: bold;
+      }
+    }
+    .handle-menu {
+      float: right;
+      transform: translateX(120%);
+      transition: all 0.15s ease-in-out;
+      position: absolute;
+      right: 0;
+      top: 0;
+      box-shadow: 0 0 3px rgba(0,0,0,0.3);
+      ul {
+        padding: 0;
+        li {
+          display: inline;
+          float: left;
+          a {
+            cursor: pointer;
+            display: inline-block;
+            margin: 0;
+            padding: 3px 5px;
+          }
+        }
+      }
+    }
+    >.tree-item {
+      padding: 3px 0 3px 18px;
+      transition: all 0.15s ease-in-out;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      position: relative;
+      &:hover {
+        background: rgba(255,255,255,0.8);
+        box-shadow: 0 0 3px rgba(0,0,0,0.3) inset;
+        > span {
+          
+        }
+        > .handle-menu {
+          transform: translateX(0px);
+        }
+      }
+      &:before {
+        content: "\e071";
+        position: absolute;
+        left: 3px;
+        font-family: Simple-Line-Icons;
+        speak: none;
+        font-style: normal;
+        font-weight: 400;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        font-size: 11px;
+        top: 7px;
+        transform: translateX(-20px);
+        transition: all 0.1s ease-in-out;
+      }
+    }
+    &.active {
+      > .tree-item {
+        color: $lightred;
+        &:before {
+          transform: translateX(0px);
+        }
+      }
+    }
+  }
+}
+.angular-ui-tree-placeholder {
+  background: #f0f9ff;
+  border: 8px dashed #ccc;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.angular-ui-tree-drag {
+  background-color: #fff;
+  padding: 3px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  .handle-menu {
+    display: none;
+  }
+}
+md-tabs.md-default-theme md-tabs-wrapper {
+  background: #fff;
+}
