@@ -8,4 +8,9 @@
  * Controller of the minovateApp
  */
 angular.module('minovateApp')
-  .controller('ArticlesArticleCtrl', function($scope) {});
+  .controller('ArticlesArticleCtrl', function($scope) {
+    $scope.page = {
+      title: 'Der Arikeltext',
+      subtitle: 'Artikel'
+    };
+  });

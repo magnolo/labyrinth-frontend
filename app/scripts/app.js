@@ -15,6 +15,8 @@ angular
     'ngResource',
     'ngSanitize',
     'ngTouch',
+    'ngMaterial',
+    'ngMessages',
     'picardy.fontawesome',
     'ui.bootstrap',
     'ui.router',
@@ -78,6 +80,10 @@ angular
 .config(['uiSelectConfig', function(uiSelectConfig) {
   uiSelectConfig.theme = 'bootstrap';
 }])
+.value('froalaConfig', {
+   inlineMode: false,
+   placeholder: 'Inhalt eingeben...'
+})
 
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
@@ -106,6 +112,10 @@ angular
     //mail
     .state('app.articles', {
       url: '/articles',
+      template: '<div ui-view></div>'
+    })
+    .state('app.articles.overview', {
+      url: '/overview',
       controller: 'ArticlesOverviewCtrl',
       templateUrl: 'views/tmpl/articles/overview.html'
     })
@@ -116,7 +126,7 @@ angular
     })
     //mail/inbox
     .state('app.articles.categories', {
-      url: '/inbox',
+      url: '/categories',
       controller: 'MailInboxCtrl',
       templateUrl: 'views/tmpl/mail/inbox.html'
     })

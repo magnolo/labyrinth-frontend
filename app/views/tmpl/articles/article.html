@@ -35,14 +35,32 @@
   <div class="pagecontent">
 
 
-    <!-- row -->
-    <div class="row">
+    <section class="tile">
 
+      <!-- tile header -->
+      <div class="tile-header dvd dvd-btm">
 
-      <!-- col -->
-      <div class="col-md-12">
-
-        <textarea froala ng-model="article.text"><textarea>
+        <ul class="controls">
+          <li>
+            <md-button type="submit" class=" md-primary md-raised md-full br-0" ng-disabled="menuForm.$invalid">Speichern</md-button>
+          </li>
+        </ul>
       </div>
+      <!-- /tile header -->
+
+      <!-- tile body -->
+      <div class="tile-body form-validation">
+        <md-input-container class="col-sm-12 input-elg">
+          <label>Name</label>
+          <input md-maxlength="50" required name="label" ng-model="page.title">
+          <div ng-messages="menuForm.label.$error">
+            <div ng-message="required">Dies ist ein Pflichtfeld.</div>
+            <div ng-message="md-maxlength">Der Name darf aus maximal 50 Zeichen bestehen.</div>
+          </div>
+        </md-input-container>
+
+      </div>
+    </section>
     </div>
+
   </div>
