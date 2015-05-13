@@ -8,8 +8,9 @@
 
     <h2>{{page.title}}
       <span>// {{page.subtitle}}</span>
-    </h2>
 
+    </h2>
+    <md-button type="submit" class="pull-right md-primary md-raised md-full br-0" ng-disabled="articleForm.$invalid">Speichern</md-button>
     <div class="page-bar">
 
       <ul class="page-breadcrumb">
@@ -33,34 +34,44 @@
   <!-- /page header -->
   <!-- page content -->
   <div class="pagecontent">
+    <form name="articleForm" class="anim full-height" submit-validate ng-submit="submitForm(articleForm.$valid)" role="form" novalidate>
 
+      <section class="tile col-md-9">
 
-    <section class="tile">
+        <!-- tile body -->
+        <div class="tile-body form-validation row">
+          <md-input-container class="input-elg col-md-12">
+            <label>Name</label>
+            <input md-maxlength="50" required name="title" ng-model="page.title">
+            <div ng-messages="articleForm.title.$error">
+              <div ng-message="required">Dies ist ein Pflichtfeld.</div>
+              <div ng-message="md-maxlength">Der Name darf aus maximal 50 Zeichen bestehen.</div>
+            </div>
+          </md-input-container>
+          <md-input-container flex class="col-md-12">
+            <label>Einleitung</label>
+            <textarea ng-model="article.intro" md-maxlength="150"></textarea>
+          </md-input-container>
+        </div>
+      </section>
+      <section class="tile col-md-3">
 
-      <!-- tile header -->
-      <div class="tile-header dvd dvd-btm">
+        <!-- tile body -->
+        <div class="tile-body form-validation row">
+          <md-switch class="md-accent col-md-12" md-no-ink aria-label="Veröffentlicht" ng-model="article.is_online">
+            Online
+          </md-switch>
+          <md-input-container flex class="col-md-12">
+            <label>Datum online</label>
+            <input type="date" required name="online_at" ng-model="article.online_at">
+            <div ng-messages="articleForm.online_at.$error">
+              <div ng-message="required">Dies ist ein Pflichtfeld.</div>
+            </div>
+          </md-input-container>
 
-        <ul class="controls">
-          <li>
-            <md-button type="submit" class=" md-primary md-raised md-full br-0" ng-disabled="menuForm.$invalid">Speichern</md-button>
-          </li>
-        </ul>
-      </div>
-      <!-- /tile header -->
-
-      <!-- tile body -->
-      <div class="tile-body form-validation">
-        <md-input-container class="col-sm-12 input-elg">
-          <label>Name</label>
-          <input md-maxlength="50" required name="label" ng-model="page.title">
-          <div ng-messages="menuForm.label.$error">
-            <div ng-message="required">Dies ist ein Pflichtfeld.</div>
-            <div ng-message="md-maxlength">Der Name darf aus maximal 50 Zeichen bestehen.</div>
-          </div>
-        </md-input-container>
-
-      </div>
-    </section>
-    </div>
-
+        </div>
+      </section>
+    </form>
   </div>
+
+</div>
