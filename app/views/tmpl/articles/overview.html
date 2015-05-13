@@ -9,84 +9,10 @@
     <h2>{{page.title}}
       <span>// {{page.subtitle}}</span>
     </h2>
-
-    <div class="page-bar">
-
-      <ul class="page-breadcrumb">
-        <li>
-          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
-        </li>
-        <li>
-          <a href="javascript:;">Artikel</a>
-        </li>
-        <li>
-          <a ui-sref="app.articles.overview">{{page.title}}</a>
-        </li>
-      </ul>
-
-    </div>
-
   </div>
   <!-- /page header -->
   <!-- page content -->
-  <div class="pagecontent">
-
-
-    <!-- row -->
-    <div class="row">
-
-
-      <!-- col -->
-      <div class="col-md-12">
-
-        <!-- tile -->
-        <section class="tile" fullscreen="isFullscreen01">
-
-          <!-- tile header -->
-          <div class="tile-header dvd dvd-btm">
-            <h1 class="custom-font">
-              <strong>Artikel</strong> Übersicht</h1>
-
-          </div>
-          <!-- /tile header -->
-
-          <!-- tile body -->
-          <div class="tile-body" ng-controller="TableSortCtrl">
-
-            <button class="btn btn-greensea btn-sm" title="Neuer Menüpunkt">
-              <fa name="plus"></fa> Neuer Artikel
-            </button>
-            <button ng-click="tableParams.sorting({})" class="btn btn-default btn-sm mb-10 pull-right">Sortierung löschen</button>
-
-
-            <table ng-table="tableParams" class="table table-custom">
-              <tr ng-repeat="article in articles">
-                <td>
-                  <label class="checkbox checkbox-custom">
-                    <input type="checkbox"><i></i>
-                  </label>
-                </td>
-                <td data-title="'Titel'" sortable="'name'">
-                  <a ui-sref="app.articles.article({id:article.id})">{{article.name}}</a>
-                </td>
-                <td data-title="'Kategorie'" sortable="'categorie'">
-                  {{article.categorie}}
-                </td>
-                <td data-title="'Erstellt'" sortable="'created_at'">
-                  {{ article.created_at }}
-                </td>
-                <td data-title="'Online'" sortable="'published_at'">
-                  {{ article.published_at }}
-                </td>
-
-              </tr>
-            </table>
-
-          </div>
-          <!-- /tile body -->
-
-        </section>
-        <!-- /tile -->
-      </div>
-    </div>
+  <div class="pagecontent" ng-controller="TableSortCtrl">
+    <listing name="Artikel" items="articles" location="app.articles.article" idfield="id"></listing>
   </div>
+</div>

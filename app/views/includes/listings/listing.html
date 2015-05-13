@@ -1,0 +1,50 @@
+<div id="listings" class="listing main {{ listview || 'block'}}">
+  <section class="grid row">
+    <header class="top-bar pt-0 pl-15 pr-15">
+      <h2 class="top-bar__headline">
+        <button class="btn btn-greensea btn-sm">
+          <fa name="plus"></fa> Neuer {{name}}
+        </button>
+      </h2>
+      <div class="filter">
+        <button class="btn btn-greensea btn-sm">
+          <fa name="search"></fa>
+          <md-tooltip md-delay="1000">Suchen</md-tooltip>
+        </button>
+        <button class="btn btn-greensea btn-sm" ng-class="{active: listview == 'block'}" ng-click="listview = 'block'">
+          <fa name="square"></fa>
+          <md-tooltip md-delay="1000">Blockansicht</md-tooltip>
+        </button>
+        <button class="btn btn-greensea btn-sm" ng-class="{active: listview == 'table'}" ng-click="listview = 'table'">
+          <fa name="bars"></fa>
+          <md-tooltip md-delay="1000">Listenansicht</md-tooltip>
+        </button>
+      </div>
+    </header>
+    <div class="grid__item" ng-repeat="item in items">
+      <div class="switcher">
+        <md-switch class="md-primary" md-no-ink aria-label="Veröffentlicht" ng-model="item.is_online" ng-true-value="1" ng-false-value="0"></md-switch>
+        <md-tooltip>Online</md-tooltip>
+      </div>
+      <h2 class="title title--preview"><a ng-href="{{ $state.href(location, {id: item[idfield]})}}">{{ item.name}}</a></h2>
+      <div class="loader"></div>
+      <span class="category">{{ item.categorie}}</span>
+      <div class="meta meta--preview">
+        <img class="meta__avatar" src="images/arnold-avatar.jpg" alt="author01" />
+        <span class="meta__date"><i class="fa fa-calendar-o"></i> {{item.created_at | amCalendar}}</span>
+        <span class="meta__reading-time"><i class="fa fa-clock-o"></i> 3 min read</span>
+      </div>
+      <div class="menu">
+        <a ng-href="{{ $state.href(location, {id: item.id})}}" class="icon icon-greensea icon-ef-3 icon-ef-3a hover-color"><i class="fa fa-pencil"></i>
+          <md-tooltip md-delay="1000">Bearbeiten</md-tooltip>
+        </a>
+        <a class="icon icon-red icon-ef-3 icon-ef-3a hover-color"><i class="fa fa-times"></i>
+          <md-tooltip md-delay="1000">Löschen</md-tooltip>
+        </a>
+        <!--<a class="icon icon-orange icon-ef-3 icon-ef-3a hover-color"><i class="fa fa-arrows"></i>
+          <md-tooltip  md-delay="1000">Verschieben</md-tooltip>
+        </a>-->
+      </div>
+    </div>
+  </section>
+</div>

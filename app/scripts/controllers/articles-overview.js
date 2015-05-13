@@ -14,15 +14,17 @@ angular.module('minovateApp')
       subtitle: 'Artikel'
     };
     $scope.articles = [{
-      id:1,
-      name: 'Ein Wind',
+      id: 1,
+      name: 'Ein Wind der Stille im Norden',
+      intro: 'hlsdf  hsldf  hjhkjhsl  hkjhlk as hlkjhl js hjkhlasdf',
       categorie: 'Urlaubserlebnisse',
-      online: 1,
-      created_at: '2015-01-01 15:45:30',
+      is_online: 1,
+      created_at: '2015-05-12 15:45:30',
       published_at: '2015-01-02 15:45:30'
     }, {
-      id:2,
+      id: 2,
       name: 'Holzweg',
+      intro: 'hlsdf  hsldf  hjhkjhsl  hkjhlk as hlkjhl js hjkhlasdf',
       categorie: 'Urlaubserlebnisse',
       is_online: 1,
       created_at: '2015-01-01 15:45:30',
@@ -30,13 +32,15 @@ angular.module('minovateApp')
     }, {
       name: 'Zaunpfeiler',
       categorie: 'Seecamping',
+      intro: 'hlsdf  hsldf  hjhkjhsl  hkjhlk as hlkjhl js hjkhlasdf',
       is_online: 1,
       created_at: '2015-01-01 15:45:30',
       published_at: '2015-01-02 15:45:30'
     }, {
       name: 'Rotzpipn',
       categorie: 'Alm',
-      is_online: 1,
+      intro: 'hlsdf  hsldf  hjhkjhsl  hkjhlk as hlkjhl js hjkhlasdf',
+      is_online: 0,
       created_at: '2015-01-01 15:45:30',
       published_at: '2015-01-02 15:45:30'
     }, {
@@ -55,15 +59,15 @@ angular.module('minovateApp')
     }, {
       total: $scope.articles.length,
       getData: function($defer, params) {
-            $defer.resolve($scope.articles.slice((params.page() - 1) * params.count(), params.page() * params.count()));
+          $defer.resolve($scope.articles.slice((params.page() - 1) * params.count(), params.page() * params.count()));
         }
-      /*getData: function($defer, params) {
-        // use build-in angular filter
-        var orderedData = params.sorting() ?
-          $filter('orderBy')($scope.articles, params.orderBy()) :
-          $scope.articles;
+        /*getData: function($defer, params) {
+          // use build-in angular filter
+          var orderedData = params.sorting() ?
+            $filter('orderBy')($scope.articles, params.orderBy()) :
+            $scope.articles;
 
-        $defer.resolve(orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count()));
-      }*/
+          $defer.resolve(orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count()));
+        }*/
     });
   });
