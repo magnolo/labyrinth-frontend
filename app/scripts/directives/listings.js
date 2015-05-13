@@ -8,7 +8,8 @@ angular.module('minovateApp').directive('listing', function($state) {
       items: '=',
       location: '@',
       idfield: '@',
-      name: '@'
+      name: '@',
+      canMove: '='
     },
     templateUrl: '/views/includes/listings/listing.html',
     link: function listingsDirective(scope, element, attrs) {

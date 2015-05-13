@@ -1,27 +1,28 @@
 <div id="listings" class="listing main {{ listview || 'block'}}">
-  <section class="grid row">
+  <section class="grid row" ng-model="items" as-sortable="dragControlListeners">
     <header class="top-bar pt-0 pl-15 pr-15">
       <h2 class="top-bar__headline">
-        <button class="btn btn-greensea btn-sm">
+        <button class="btn btn-greensea">
           <fa name="plus"></fa> Neuer {{name}}
         </button>
       </h2>
       <div class="filter">
-        <button class="btn btn-greensea btn-sm">
+
+        <!--<button class="btn btn-greensea btn-border">
           <fa name="search"></fa>
           <md-tooltip md-delay="1000">Suchen</md-tooltip>
-        </button>
-        <button class="btn btn-greensea btn-sm" ng-class="{active: listview == 'block'}" ng-click="listview = 'block'">
+        </button>-->
+        <button class="btn btn-greensea btn-border" ng-class="{active: listview == 'block'}" ng-click="listview = 'block'">
           <fa name="square"></fa>
           <md-tooltip md-delay="1000">Blockansicht</md-tooltip>
         </button>
-        <button class="btn btn-greensea btn-sm" ng-class="{active: listview == 'table'}" ng-click="listview = 'table'">
+        <button class="btn btn-greensea btn-border" ng-class="{active: listview == 'table'}" ng-click="listview = 'table'">
           <fa name="bars"></fa>
           <md-tooltip md-delay="1000">Listenansicht</md-tooltip>
         </button>
       </div>
     </header>
-    <div class="grid__item" ng-repeat="item in items">
+    <div class="grid__item" ng-repeat="item in items" as-sortable-item>
       <div class="switcher">
         <md-switch class="md-primary" md-no-ink aria-label="Veröffentlicht" ng-model="item.is_online" ng-true-value="1" ng-false-value="0"></md-switch>
         <md-tooltip>Online</md-tooltip>
@@ -41,10 +42,16 @@
         <a class="icon icon-red icon-ef-3 icon-ef-3a hover-color"><i class="fa fa-times"></i>
           <md-tooltip md-delay="1000">Löschen</md-tooltip>
         </a>
+        <a ng-if="canMove" class="icon icon-orange icon-ef-3 icon-ef-3a hover-color" as-sortable-item-handle><i class="fa fa-arrows"></i>
+          <md-tooltip md-delay="1000">Verschieben</md-tooltip>
+        </a>
         <!--<a class="icon icon-orange icon-ef-3 icon-ef-3a hover-color"><i class="fa fa-arrows"></i>
           <md-tooltip  md-delay="1000">Verschieben</md-tooltip>
         </a>-->
       </div>
+    </div>
+    <div class="grid__item" ui-sref="app.articles.article({id: 'new'})" style="font-size:4em; cursor:pointer;">
+      <fa name="plus"></fa>
     </div>
   </section>
 </div>

@@ -53,7 +53,8 @@ angular
     'easypiechart',
     'uiGmapgoogle-maps',
     'ui.calendar',
-    'froala'
+    'froala',
+    'ui.sortable'
   ])
   .run(['$rootScope', '$state', '$stateParams', function($rootScope, $state, $stateParams) {
     $rootScope.$state = $state;
