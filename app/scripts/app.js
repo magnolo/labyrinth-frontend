@@ -634,7 +634,17 @@ angular
       })
       .state('app.webpages', {
         url: '/webpages',
-        templateUrl: 'views/tmpl/webpages.html'
+        template: '<div ui-view></div>'
+      })
+      .state('app.webpages.overview', {
+        url: '/overview',
+        controller: 'WebpagesOverviewCtrl',
+        templateUrl: 'views/tmpl/webpages/overview.html'
+      })
+      .state('app.webpages.page', {
+        url: '/:id',
+        controller: 'WebpagesPageCtrl',
+        templateUrl: 'views/tmpl/webpages/page.html'
       })
       //gallery page
       .state('app.pages.gallery', {

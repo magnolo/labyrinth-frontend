@@ -166,7 +166,7 @@ $scheme-magnolo: $magnolo;
 }
 //scheme-greensea
 #header.scheme-greensea {
-  background-color: $scheme-greensea;
+  background-color: darken($scheme-greensea, 5%)!important;
 }
 #header .branding.scheme-greensea,
 #sidebar.scheme-greensea,
@@ -178,7 +178,7 @@ $scheme-magnolo: $magnolo;
 }
 #minovate.greensea-scheme-color #navigation > li.active > a,
 #minovate.greensea-scheme-color #loading-bar .bar {
-  background-color: $active-default!important;
+  background-color: darken($active-default, 10%)!important;
 }
 #minovate.greensea-scheme-color #loading-bar-spinner .spinner-icon {
   border-top-color: $active-default;
@@ -188,18 +188,35 @@ $scheme-magnolo: $magnolo;
   @include box-shadow($active-default 1px 0 6px 1px);
 }
 #minovate.greensea-scheme-color {
+  #content {
+    a:not(.icon):not(.btn):not(.dropdown-toggle):not([title-control-close]) {
+      color: $active-default;
+      &:hover {
+        color: darken($active-default, 15%);
+      }
+    }
+  }
   #navigation {
     .dropdown {
+      > ul {
+        background-color: rgba(0, 0, 0, 0.25);
+      }
       >ul li {
         &:hover,
         &.active {
           > a {
-            color: $active-default !important;
+            color: lighten($active-default, 5%) !important;
+            //color: darken($active-default, 40%) !important;
           }
         }
       }
       &.submenu.open>a {
         color: white !important;
+      }
+    }
+    .open {
+      > a {
+        box-shadow: 0 0 5px rgba(0,0,0,0.2);
       }
     }
   }

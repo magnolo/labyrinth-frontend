@@ -13,10 +13,10 @@ angular.module('minovateApp')
     $scope.main = {
       title: 'Labyrinth',
       settings: {
-        navbarHeaderColor: 'scheme-black',
-        sidebarColor: 'scheme-black',
-        brandingColor: 'scheme-black',
-        activeColor: 'lightred-scheme-color',
+        navbarHeaderColor: 'scheme-greensea',
+        sidebarColor: 'scheme-greensea',
+        brandingColor: 'scheme-greensea',
+        activeColor: 'greensea-scheme-color',
         headerFixed: true,
         asideFixed: true,
         rightbarShow: false,

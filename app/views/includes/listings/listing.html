@@ -2,7 +2,7 @@
   <section class="grid row" ng-model="items" as-sortable="dragControlListeners">
     <header class="top-bar pt-0 pl-15 pr-15">
       <h2 class="top-bar__headline">
-        <button class="btn btn-greensea">
+        <button class="btn btn-greensea" ng-href="{{ $state.href(location, {id: 'new'})}}">
           <fa name="plus"></fa> Neuer {{name}}
         </button>
       </h2>
@@ -50,8 +50,10 @@
         </a>-->
       </div>
     </div>
-    <div class="grid__item" ui-sref="app.articles.article({id: 'new'})" style="font-size:4em; cursor:pointer;">
-      <fa name="plus"></fa>
+    <div class="grid__item" style="font-size:4em; cursor:pointer;">
+      <a ng-href="{{ $state.href(location, {id: 'new'})}}">
+        <fa name="plus"></fa>
+      </a>
     </div>
   </section>
 </div>
