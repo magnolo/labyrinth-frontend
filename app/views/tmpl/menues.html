@@ -16,14 +16,14 @@
         </button>
       </div>-->
     <md-tabs md-border-bottom class="full-height">
-      <md-tab label="Hauptmenü">
+      <md-tab label="{{menue.name}}" ng-repeat="menue in menues">
         <md-content class="bg-default lter full-height">
           <div slimscroll="{height: '100%'}">
             <!--<abn-tree tree-data="my_data" tree-control="my_tree" on-select="my_tree_handler(branch)" expand-level="2" initial-selection="Urlaubserlebnisse" icon-leaf="fa fa-circle-o" icon-expand="fa fa-plus" icon-collapse="fa fa-minus"></abn-tree>
             -->
             <div ui-tree class="ui-tree">
-              <ol ui-tree-nodes="" ng-model="my_data">
-                <li ng-repeat="item in my_data" ui-tree-node ng-class="{active:activeItem == item}" ng-include="'views/includes/ui-tree/menues.html'">
+              <ol ui-tree-nodes="" ng-model="menue.items">
+                <li ng-repeat="item in menue.items" ui-tree-node ng-class="{active:activeItem == item}" ng-include="'views/includes/ui-tree/menues.html'">
 
                 </li>
               </ol>

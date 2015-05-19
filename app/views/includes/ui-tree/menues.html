@@ -1,12 +1,12 @@
 <div class="tree-item">
-  <a class="pointer" ng-click="toggle(this)" ng-if="item.children.length > 0">
+  <a class="pointer" ng-click="toggle(this)" ng-if="item.items.length > 0">
     <i ng-class="{'fa fa-plus': collapsed, 'fa fa-minus': !collapsed}"></i>
   </a>
-  <span ng-if="!item.children || item.children.length == 0">
+  <span ng-if="!item.items || item.items.length == 0">
     <i class="icon-doc"></i>
   </span>
-  <span class="pointer" ng-class="{bold: item.children.length > 0}" ng-click="setItem(item)">
-    {{item.label}}
+  <span class="pointer" ng-class="{bold: item.items.length > 0}" ng-click="setItem(item)">
+    {{item.name}}
   </span>
   <div class="handle-menu">
     <ul>
@@ -30,7 +30,7 @@
 
   </div>
 </div>
-<ol ui-tree-nodes="" ng-model="item.children" ng-class="{hidden: collapsed}">
-  <li ng-repeat="item in item.children" ui-tree-node ng-include="'views/includes/ui-tree/menues.html'" ng-class="{active:activeItem == item}">
+<ol ui-tree-nodes="" ng-model="item.items" ng-class="{hidden: collapsed}">
+  <li ng-repeat="item in item.items" ui-tree-node ng-include="'views/includes/ui-tree/menues.html'" ng-class="{active:activeItem == item}">
   </li>
 </ol>

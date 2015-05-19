@@ -24,34 +24,34 @@ angular
     'angular-loading-bar',
     'angular-momentjs',
     'angularMoment',
-    'FBAngular',
+    //'FBAngular',
     'lazyModel',
     'toastr',
     'angularBootstrapNavTree',
     'oc.lazyLoad',
     'ui.select',
     'ui.tree',
-    'textAngular',
-    'colorpicker.module',
+    //'textAngular',
+    //'colorpicker.module',
     'angularFileUpload',
     'ngImgCrop',
-    'datatables',
-    'datatables.bootstrap',
-    'datatables.colreorder',
-    'datatables.colvis',
-    'datatables.tabletools',
-    'datatables.scroller',
-    'datatables.columnfilter',
+    //'datatables',
+    //'datatables.bootstrap',
+    //'datatables.colreorder',
+    //'datatables.colvis',
+    //'datatables.tabletools',
+    //'datatables.scroller',
+    //'datatables.columnfilter',
     'ui.grid',
     'ui.grid.resizeColumns',
     'ui.grid.edit',
     'ui.grid.moveColumns',
-    'ngTable',
-    'smart-table',
-    'angular-flot',
-    'angular-rickshaw',
-    'easypiechart',
-    'uiGmapgoogle-maps',
+    //'ngTable',
+    //'smart-table',
+    //'angular-flot',
+    //'angular-rickshaw',
+    //'easypiechart',
+    //'uiGmapgoogle-maps',
     'ui.calendar',
     'froala',
     'ui.sortable'
@@ -123,7 +123,7 @@ angular
           }]
         }
       })
-      //mail
+      //articles
       .state('app.articles', {
         url: '/articles',
         template: '<div ui-view></div>'
@@ -133,19 +133,20 @@ angular
         controller: 'ArticlesOverviewCtrl',
         templateUrl: 'views/tmpl/articles/overview.html'
       })
+      .state('app.articles.categories', {
+        url: '/categories',
+        controller: 'ArticlesCategoriesCtrl',
+        templateUrl: 'views/tmpl/articles/categories.html'
+      })
       .state('app.articles.article', {
         url: '/:id',
         controller: 'ArticlesArticleCtrl',
         templateUrl: 'views/tmpl/articles/article.html'
       })
-      //mail/inbox
-      .state('app.articles.categories', {
-        url: '/categories',
-        controller: 'MailInboxCtrl',
-        templateUrl: 'views/tmpl/mail/inbox.html'
-      })
-      //mail/compose
-      .state('app.mail.compose', {
+
+
+    //mail/compose
+    .state('app.mail.compose', {
         url: '/compose',
         controller: 'MailComposeCtrl',
         templateUrl: 'views/tmpl/mail/compose.html'

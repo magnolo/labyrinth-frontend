@@ -30,13 +30,15 @@
           <span ng-if="!item.is_online">Offline</span>
         </md-tooltip>
       </div>
-      <h2 class="title title--preview"><a ng-href="{{ $state.href(location, {id: item[idfield]})}}">{{ item.name}}</a></h2>
+      <h2 class="title title--preview"><a ng-href="{{ $state.href(location, {id: item[idfield]})}}">{{ item.title}}</a></h2>
       <div class="loader"></div>
-      <span class="category">{{ item.categorie}}</span>
+      <span class="category">{{ item.categorie.name}}</span>
       <div class="meta meta--preview">
         <img class="meta__avatar" src="images/arnold-avatar.jpg" alt="author01" />
-        <span class="meta__date"><i class="fa fa-calendar-o"></i> {{item.created_at | amCalendar}}</span>
-        <span class="meta__reading-time"><i class="fa fa-clock-o"></i> 3 min read</span>
+        <span class="meta__date"><i class="fa fa-calendar-o"></i>
+          <span am-time-ago="item.created_at"></span>
+        </span>
+        <span class="meta__reading-time"><i class="fa fa-clock-o"></i>{{item.online_at | amCalendar}}</span>
       </div>
       <div class="menu">
         <a ng-href="{{ $state.href(location, {id: item.id})}}" class="icon icon-greensea icon-ef-3 icon-ef-3a hover-color"><i class="fa fa-pencil"></i>

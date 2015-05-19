@@ -14,8 +14,8 @@ angular.module('minovateApp')
 
         var app = angular.element('#minovate'),
           $window = angular.element(window),
-          width = $window.width(),
-          clicked = $cookies.menuswitched || '';
+          width = $window.width();
+
 
         var removeRipple = function() {
           angular.element('#sidebar').find('.ink').remove();
@@ -86,13 +86,13 @@ angular.module('minovateApp')
         element.on('click', function(e) {
           if (app.hasClass('sidebar-sm')) {
             app.removeClass('sidebar-sm').addClass('sidebar-xs');
-            $cookies.menuswitched = 'sidebar-xs';
+            $cookies['menuswitched'] = 'sidebar-xs';
           } else if (app.hasClass('sidebar-xs')) {
             app.removeClass('sidebar-xs');
-            $cookies.menuswitched = '';
+            $cookies['menuswitched'] = '';
           } else {
             app.addClass('sidebar-sm');
-            $cookies.menuswitched = 'sidebar-sm';
+            $cookies['menuswitched'] = 'sidebar-sm';
           }
 
           app.removeClass('sidebar-sm-forced sidebar-xs-forced');

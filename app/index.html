@@ -46,7 +46,7 @@
   <!-- endbuild -->
 </head>
 
-<body id="minovate" class="{{main.settings.navbarHeaderColor}} {{main.settings.activeColor}} {{containerClass}} sidebar-offcanvas" ng-class="{'header-fixed':main.settings.headerFixed, 'header-static':!main.settings.headerFixed, 'aside-fixed':main.settings.asideFixed, 'aside-static':!main.settings.asideFixed, 'rightbar-show':main.settings.rightbarShow, 'rightbar-hidden':!main.settings.rightbarShow , 'helpbar-show': main.settings.helpbarShow, 'helpbar-hidden': !main.settings.helpbarShow}">
+<body id="minovate" class="{{main.settings.navbarHeaderColor}} {{main.settings.activeColor}} {{containerClass}}" ng-class="{'header-fixed':main.settings.headerFixed, 'header-static':!main.settings.headerFixed, 'aside-fixed':main.settings.asideFixed, 'aside-static':!main.settings.asideFixed, 'rightbar-show':main.settings.rightbarShow, 'rightbar-hidden':!main.settings.rightbarShow , 'helpbar-show': main.settings.helpbarShow, 'helpbar-hidden': !main.settings.helpbarShow}">
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -179,6 +179,7 @@
   <script src="scripts/controllers/webpages-overview.js"></script>
   <script src="scripts/controllers/articles-overview.js"></script>
   <script src="scripts/controllers/articles-article.js"></script>
+  <script src="scripts/controllers/articles-categories.js"></script>
   <script src="scripts/controllers/events-overview.js"></script>
   <script src="scripts/directives/navcollapse.js"></script>
   <script src="scripts/directives/slimscroll.js"></script>
@@ -269,6 +270,9 @@
   <script src="scripts/directives/submitvalidate.js"></script>
   <script src="scripts/directives/native-tab.js"></script>
   <script src="scripts/directives/listings.js"></script>
+
+  <script src="scripts/services/articles.js"></script>
+  <script src="scripts/services/menues.js"></script>
   <!-- endbuild -->
 </body>
 
