@@ -31,21 +31,6 @@
           </div>
         </md-content>
       </md-tab>
-      <md-tab label="Footermenü">
-        <md-content class="bg-default lter full-height">
-          <div slimscroll="{height: '100%'}">
-            <!--<abn-tree tree-data="my_data" tree-control="my_tree" on-select="my_tree_handler(branch)" expand-level="2" initial-selection="Urlaubserlebnisse" icon-leaf="fa fa-circle-o" icon-expand="fa fa-plus" icon-collapse="fa fa-minus"></abn-tree>
-            -->
-            <div ui-tree class="ui-tree">
-              <ol ui-tree-nodes="" ng-model="my_data">
-                <li ng-repeat="item in my_data" ui-tree-node ng-class="{active:activeItem == item}" ng-include="'views/includes/ui-tree/menues.html'">
-
-                </li>
-              </ol>
-            </div>
-          </div>
-        </md-content>
-      </md-tab>
     </md-tabs>
 
 
@@ -83,13 +68,13 @@
 
         <!-- tile body -->
         <div class="tile-body form-validation">
-          <md-switch class="md-accent" md-no-ink aria-label="Veröffentlicht" ng-model="item.online">
+          <md-switch class="md-accent" md-no-ink aria-label="Veröffentlicht" ng-model="item.is_online">
             Online
           </md-switch>
           <md-input-container class="col-sm-12 input-elg">
             <label>Name</label>
-            <input md-maxlength="50" required name="label" ng-model="item.label">
-            <div ng-messages="menuForm.label.$error">
+            <input md-maxlength="50" required name="name" ng-model="item.name">
+            <div ng-messages="menuForm.name.$error">
               <div ng-message="required">Dies ist ein Pflichtfeld.</div>
               <div ng-message="md-maxlength">Der Name darf aus maximal 50 Zeichen bestehen.</div>
             </div>
@@ -113,7 +98,7 @@
             </div>
           </div>-->
           <md-input-container class="col-md-6 input-lg">
-            <md-select ng-model="item.type" name="type" required placeholder="Typ auswählen">
+            <md-select ng-model="item.type_id" name="type" required placeholder="Typ auswählen">
               <md-optgroup label="Typ">
                 <md-option ng-value="type.id" ng-repeat="type in types ">{{type.name}}</md-option>
               </md-optgroup>
@@ -124,7 +109,7 @@
             </div>
             <p class="md-caption" ng-if="!item.type">Wähle hier die Art des Menüpunktes aus. <a href ng-click="main.settings.helpbarShow = !main.settings.helpbarShow">Hilfe</a> </p>
           </md-input-container>
-          <md-input-container class="col-md-6 input-lg anim" ng-if="item.type == 1">
+          <md-input-container class="col-md-6 input-lg anim" ng-if="item.type_id == 1">
             <md-select ng-model="item.page" required placeholder="Seite auswählen">
               <md-optgroup label="Seite">
                 <md-option ng-value="page.id" ng-repeat="page in pages ">{{page.name}}</md-option>
@@ -132,7 +117,7 @@
             </md-select>
             <p class="md-caption" ng-if="!item.page">Wähle hier die Seite zur Verknüpfung aus</p>
           </md-input-container>
-          <md-input-container class="col-sm-6 input-lg" ng-if="item.type == 4">
+          <md-input-container class="col-sm-6 input-lg" ng-if="item.type_id == 4">
             <label>Url</label>
             <input md-maxlength="30" required name="url" ng-model="item.url">
             <div ng-messages="menuForm.url.$error">
