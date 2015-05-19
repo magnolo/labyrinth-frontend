@@ -60,6 +60,9 @@
       opacity: 0.5;
       padding: 1px 4px;
       font-size: 18px;
+      font-size: 2em;
+      padding-right: 0.5em;
+      float: right !important;
       &:hover {
         opacity: 1;
       }

@@ -97,7 +97,7 @@ angular
     $mdThemingProvider.definePalette('greenIt', greenItMap);
     // Use that theme for the primary intentions
     $mdThemingProvider.theme('default')
-      .primaryPalette('greenIt')
+      .primaryPalette('greenIt');
   })
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 

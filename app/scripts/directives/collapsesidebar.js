@@ -15,7 +15,7 @@ angular.module('minovateApp')
         var app = angular.element('#minovate'),
           $window = angular.element(window),
           width = $window.width(),
-          clicked = $cookies['menuswitched'] || '';
+          clicked = $cookies.menuswitched || '';
 
         var removeRipple = function() {
           angular.element('#sidebar').find('.ink').remove();
@@ -24,7 +24,7 @@ angular.module('minovateApp')
         var collapse = function() {
 
           width = $window.width();
-          if ($cookies['menuswitched'] == '') {
+          if ($cookies.menuswitched === '') {
             if (width < 1024) {
               app.addClass('sidebar-sm');
             } else {
@@ -48,18 +48,18 @@ angular.module('minovateApp')
             }
           } else {
 
-            if (width < 1024 && $cookies['menuswitched'] == '') {
+            if (width < 1024 && $cookies.menuswitched === '') {
               app.addClass('sidebar-sm');
             } else {
-              app.removeClass('sidebar-sm sidebar-xs').addClass($cookies['menuswitched']);
+              app.removeClass('sidebar-sm sidebar-xs').addClass($cookies.menuswitched);
             }
 
             if (width < 768) {
               app.removeClass('sidebar-sm sidebar-xs').addClass('sidebar-xs');
-            } else if (width > 992 && $cookies['menuswitched'] == '') {
+            } else if (width > 992 && $cookies.menuswitched === '') {
               app.removeClass('sidebar-sm sidebar-xs');
             } else {
-              app.removeClass('sidebar-xs').addClass('sidebar-sm').addClass($cookies['menuswitched']);
+              app.removeClass('sidebar-xs').addClass('sidebar-sm').addClass($cookies.menuswitched);
             }
 
             if (app.hasClass('sidebar-sm-forced')) {
@@ -86,13 +86,13 @@ angular.module('minovateApp')
         element.on('click', function(e) {
           if (app.hasClass('sidebar-sm')) {
             app.removeClass('sidebar-sm').addClass('sidebar-xs');
-            $cookies['menuswitched'] = 'sidebar-xs';
+            $cookies.menuswitched = 'sidebar-xs';
           } else if (app.hasClass('sidebar-xs')) {
             app.removeClass('sidebar-xs');
-            $cookies['menuswitched'] = '';
+            $cookies.menuswitched = '';
           } else {
             app.addClass('sidebar-sm');
-            $cookies['menuswitched'] = 'sidebar-sm';
+            $cookies.menuswitched = 'sidebar-sm';
           }
 
           app.removeClass('sidebar-sm-forced sidebar-xs-forced');

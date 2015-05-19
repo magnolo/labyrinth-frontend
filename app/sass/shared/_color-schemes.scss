@@ -189,7 +189,8 @@ $scheme-magnolo: $magnolo;
 }
 #minovate.greensea-scheme-color {
   #content {
-    a:not(.icon):not(.btn):not(.dropdown-toggle):not([title-control-close]) {
+    a:not(.icon):not(.btn):not(.dropdown-toggle):not([title-control-close]),
+    .ui-tree li.active > .tree-item {
       color: $active-default;
       &:hover {
         color: darken($active-default, 15%);

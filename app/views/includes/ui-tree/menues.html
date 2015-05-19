@@ -1,6 +1,6 @@
 <div class="tree-item">
   <a class="pointer" ng-click="toggle(this)" ng-if="item.children.length > 0">
-    <i ng-class="{'icon-folder': collapsed, 'icon-folder-alt': !collapsed}"></i>
+    <i ng-class="{'fa fa-plus': collapsed, 'fa fa-minus': !collapsed}"></i>
   </a>
   <span ng-if="!item.children || item.children.length == 0">
     <i class="icon-doc"></i>
@@ -12,16 +12,16 @@
     <ul>
       <li>
         <a ui-tree-handle class="btn btn-sx btn-orange">
-          <i class="icon-cursor-move"></i>
+          <i class="fa fa-arrows"></i>
         </a>
       </li>
       <li>
         <a data-nodrag="" ng-click="newSubItem(this)" class="btn btn-sx btn-greensea">
-          <i class="icon-plus"></i>
+          <i class="fa fa-plus"></i>
         </a>
       </li>
       <li>
-        <a data-nodrag="" ng-click="remove(this)" class="btn btn-sx btn-red"><i class="icon-close"></i></a>
+        <a data-nodrag="" ng-click="remove(this)" class="btn btn-sx btn-red"><i class="fa fa-times"></i></a>
       </li>
 
     </ul>

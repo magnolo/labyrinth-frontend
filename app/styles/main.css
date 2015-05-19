@@ -45,8 +45,7 @@ ul.abn-tree i.indented {
     .ui-tree li a {
       margin-right: 5px;
       text-align: center;
-      display: inline-block;
-      color: #e05d6f; }
+      display: inline-block; }
       .ui-tree li a:hover {
         text-decoration: none; }
     .ui-tree li span {
@@ -1945,11 +1944,11 @@ html.boxed-layout {
     left: 80px; } }
 @media only screen and (max-width: 768px) {
   #minovate.header-fixed.aside-fixed #content {
-    top: 90px; }
+    top: 88px; }
   #minovate.header-fixed.aside-fixed:not(.sidebar-sm):not(.sidebar-xs) #content {
     left: 40px; }
   #minovate.aside-static #content {
-    padding-top: 90px; }
+    padding-top: 88px; }
   #minovate.header-static.aside-static #content {
     padding-top: 0; } }
 #minovate.header-fixed #header {
@@ -2005,7 +2004,10 @@ html.boxed-layout {
       margin-left: 5px;
       opacity: 0.5;
       padding: 1px 4px;
-      font-size: 18px; }
+      font-size: 18px;
+      font-size: 2em;
+      padding-right: 0.5em;
+      float: right !important; }
       #header .branding .offcanvas-toggle:hover {
         opacity: 1; }
   #header .search {
@@ -2640,7 +2642,7 @@ html.boxed-layout {
 
 @media only screen and (max-width: 768px) {
   #minovate.sidebar-xs.aside-fixed #sidebar {
-    top: 90px; }
+    top: 88px; }
   #minovate.sidebar-xs.aside-fixed.header-static #sidebar {
     top: 0;
     z-index: 99; }
@@ -2648,7 +2650,7 @@ html.boxed-layout {
       height: 45px;
       line-height: 26px; }
   #minovate.sidebar-xs.aside-static #sidebar {
-    padding-top: 90px; } }
+    padding-top: 88px; } }
 .pageheader {
   margin-bottom: 20px; }
   .pageheader h2 {
@@ -2912,7 +2914,7 @@ html.boxed-layout {
     padding-right: 0 !important; } }
 @media only screen and (max-width: 768px) {
   #rightbar {
-    top: 90px; } }
+    top: 88px; } }
 @media only screen and (max-width: 360px) {
   #rightbar {
     width: 100%; }
@@ -10085,6 +10087,13 @@ input[type="text"].ui-grid-filter-input {
 .mfp-arrow-left:before {
   display: none !important; }
 
+/* Viewport sizes based on column number and sidebar */
+/* 1 column */
+/* 2 columns */
+/* 3 columns */
+/* 4 columns */
+/* 5 columns */
+/* 6 columns */
 *,
 *:after,
 *:before {
@@ -10233,12 +10242,12 @@ button:focus {
   transition: all 0.2s ease-in-out; }
 
 /* grid item element and full content element styles */
-.title {
+.grid__item .title {
   margin: 0;
   font-size: 2.3em;
   font-family: "Playfair Display", serif;
   text-align: center; }
-  .title a {
+  .grid__item .title a {
     color: inherit; }
 
 .title--preview {
@@ -10652,13 +10661,90 @@ button:focus {
         .as-sortable-drag .grid__item .menu a:last-child {
           visibility: visible; }
 
-/* Viewport sizes based on column number and sidebar */
-/* 1 column */
-/* 2 columns */
-/* 3 columns */
-/* 4 columns */
-/* 5 columns */
-/* 6 columns */
+.table__view .grid__item {
+  display: inline-block;
+  width: 100%;
+  padding: 1em; }
+  .table__view .grid__item.new__button {
+    display: none; }
+  .table__view .grid__item > * {
+    display: inline-block;
+    float: left; }
+  @media screen and (min-width: 1200px) {
+    .table__view .grid__item {
+      margin: 5px 10px; }
+      .table__view .grid__item .title {
+        font-size: 1.8em;
+        width: 30%;
+        text-align: left; }
+      .table__view .grid__item .loader {
+        display: none; }
+      .table__view .grid__item .category {
+        width: 20%;
+        font-size: 1.3em;
+        text-align: left; }
+      .table__view .grid__item .meta {
+        width: 20%;
+        padding: 5px 0; }
+        .table__view .grid__item .meta .meta__avatar {
+          display: none; }
+      .table__view .grid__item .menu {
+        width: 20%;
+        background: transparent;
+        padding: 0;
+        position: static;
+        float: right;
+        transform: translateY(0); }
+        .table__view .grid__item .menu .icon {
+          font-size: 13px;
+          width: 25px;
+          height: 25px;
+          margin: 0 10px; }
+          .table__view .grid__item .menu .icon > .fa {
+            line-height: 25px;
+            font-size: 13px; } }
+  @media screen and (max-width: 1200px) {
+    .table__view .grid__item {
+      margin: 0;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      position: relative; }
+      .table__view .grid__item::before {
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        border: 1px solid rgba(0, 0, 0, 0.1); }
+      .table__view .grid__item .title {
+        font-size: 1.8em;
+        text-align: left;
+        width: 100%; }
+      .table__view .grid__item .loader {
+        display: none; }
+      .table__view .grid__item .category {
+        font-size: 1.3em;
+        text-align: left;
+        width: 100%; }
+      .table__view .grid__item .meta {
+        padding: 5px 0;
+        width: 50%; }
+        .table__view .grid__item .meta .meta__avatar {
+          display: none; }
+      .table__view .grid__item .menu {
+        width: 50%;
+        background: transparent;
+        padding: 0;
+        position: static;
+        transform: translateY(0);
+        text-align: right; }
+        .table__view .grid__item .menu .icon {
+          font-size: 13px;
+          width: 25px;
+          height: 25px;
+          margin: 0 5px; }
+          .table__view .grid__item .menu .icon > .fa {
+            line-height: 25px;
+            font-size: 13px; } }
+
 @media screen and (min-width: 600px) {
   .main {
     height: 100%; }
@@ -11675,9 +11761,11 @@ hr.line-full {
   -webkit-box-shadow: #16a085 1px 0 6px 1px;
   box-shadow: #16a085 1px 0 6px 1px; }
 
-#minovate.greensea-scheme-color #content a:not(.icon):not(.btn):not(.dropdown-toggle):not([title-control-close]) {
+#minovate.greensea-scheme-color #content a:not(.icon):not(.btn):not(.dropdown-toggle):not([title-control-close]),
+#minovate.greensea-scheme-color #content .ui-tree li.active > .tree-item {
   color: #16a085; }
-  #minovate.greensea-scheme-color #content a:not(.icon):not(.btn):not(.dropdown-toggle):not([title-control-close]):hover {
+  #minovate.greensea-scheme-color #content a:not(.icon):not(.btn):not(.dropdown-toggle):not([title-control-close]):hover,
+  #minovate.greensea-scheme-color #content .ui-tree li.active > .tree-item:hover {
     color: #0d5d4d; }
 #minovate.greensea-scheme-color #navigation .dropdown > ul {
   background-color: rgba(0, 0, 0, 0.25); }

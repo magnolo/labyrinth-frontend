@@ -1,9 +1,7 @@
 .sidebar-sm,
 .sidebar-xs {
-
   #sidebar {
     background-color: transparent;
-
     #sidebar-wrap {
       &:before {
         content: '';
@@ -14,13 +12,10 @@
         background-color: $sidebar-bg;
       }
     }
-
     &.dropdown-open {
       width: 100%!important;
     }
-
     .slimScrollDiv {
-
       .slimScrollBar,
       .slimScrollRail {
         right: auto!important;
@@ -28,7 +23,6 @@
         width: 4px!important;
       }
     }
-
     accordion {
       .panel-heading,
       .charts,
@@ -45,46 +39,38 @@
         height: 100%;
         .panel,
         .panel-collapse,
-        .panel-body{
+        .panel-body {
           height: 100%!important;
         }
       }
     }
-
     #navigation {
       margin: 0 -10px;
       height: 100%;
-
       >li {
         overflow: visible;
-
         >a {
           padding: 15px 5px;
           text-align: center;
           font-size: $font-size-mini;
-
           >i {
             display: block;
             margin: 0 auto 3px;
             font-size: 22px;
           }
-
           >.label {
             display: none;
           }
         }
-
         .ink {
           display: none;
         }
-
         &.dropdown {
           >a {
             >i:last-of-type {
               display: none;
             }
           }
-
           >ul {
             position: absolute;
             left: 100%;
@@ -92,22 +78,18 @@
             width: 220px;
             background-color: darken($sidebar-bg, 5%);
           }
-
           &.open {
             >ul {
               display: none !important;
             }
           }
-
           &:hover {
             >ul {
               display: block !important;
             }
           }
         }
-
         li.submenu {
-
           >ul {
             position: absolute;
             left: 100%;
@@ -116,13 +98,11 @@
             background-color: darken($sidebar-bg, 5%);
             padding-left: 0;
           }
-
           &.open {
             >ul {
               display: none !important;
             }
           }
-
           &:hover {
             >ul {
               display: block !important;
@@ -133,25 +113,20 @@
     }
   }
 }
-
 #minovate.header-fixed.sidebar-sm {
   #content {
     left: 80px;
     padding-left: 0;
   }
 }
-
 #minovate:not(.header-fixed).sidebar-sm {
   #header {
     padding-left: 80px;
-
     .branding {
       width: 80px;
-
       .brand>span {
         display: none;
       }
-
       .brand {
         margin-left: 12px;
       }
@@ -161,20 +136,16 @@
     padding-left: 80px;
   }
 }
-
 #minovate:not(.aside-fixed).sidebar-sm {
   #content {
     padding-left: 80px;
   }
 }
-
 #minovate:not(.header-fixed):not(.aside-fixed).sidebar-sm {
   #header {
     padding-left: 0;
   }
 }
-
-
 .sidebar-sm {
   #sidebar,
   #navigation {
@@ -184,14 +155,11 @@
     padding-left: 80px;
   }
 }
-
 .sidebar-xs {
-
   #header .branding {
     width: 40px;
     padding: 0;
-
-    >a{
+    >a {
       background-position: 6px 10px;
       width: 40px;
       >span {
@@ -199,7 +167,6 @@
       }
     }
   }
-
   #sidebar,
   #navigation {
     width: 40px;
@@ -208,7 +175,6 @@
     >li {
       >a {
         padding: 10px 5px;
-
         >i {
           margin: 0;
           display: inline-block;
@@ -228,24 +194,21 @@
   #content {
     padding-left: 40px;
   }
-
   #sidebar #sidebar-wrap {
     &:before {
       width: 40px;
     }
   }
 }
-
 #minovate.header-fixed.sidebar-xs {
   #content {
-   left: 40px;
-   padding-left: 0;
+    left: 40px;
+    padding-left: 0;
   }
 }
 #minovate:not(.header-fixed).sidebar-xs {
   #header {
     padding-left: 40px;
-
     .branding {
       width: 40px;
     }
@@ -264,7 +227,6 @@
     padding-left: 0;
   }
 }
-
 #minovate.sidebar-xs.sidebar-offcanvas {
   #sidebar {
     left: -40px;
@@ -282,19 +244,17 @@
     }
   }
 }
-
 @media only screen and (max-width: 768px) {
   #minovate {
-    &.sidebar-xs{
+    &.sidebar-xs {
       &.aside-fixed {
         #sidebar {
-          top: 90px;
+          top: 88px;
         }
         &.header-static {
           #sidebar {
             top: 0;
             z-index: 99;
-
             #navigation {
               >li>a {
                 height: 45px;
@@ -306,7 +266,7 @@
       }
       &.aside-static {
         #sidebar {
-          padding-top: 90px;
+          padding-top: 88px;
         }
       }
     }
