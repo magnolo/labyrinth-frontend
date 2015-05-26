@@ -32,7 +32,10 @@
       </div>
       <h2 class="title title--preview"><a ng-href="{{ $state.href(location, {id: item[idfield]})}}">{{ item.title}}</a></h2>
       <div class="loader"></div>
-      <span class="category">{{ item.categorie.name}}</span>
+      <span class="category" ng-if="item.categories.length == 1">{{ item.categories[0].name}}</span>
+      <span class="category" ng-if="item.categories.length > 1">
+        <span ng-repeat="categorie in item.categories">{{ categorie.name}}</span>
+      </span>
       <div class="meta meta--preview">
         <img class="meta__avatar" src="images/arnold-avatar.jpg" alt="author01" />
         <span class="meta__date"><i class="fa fa-calendar-o"></i>

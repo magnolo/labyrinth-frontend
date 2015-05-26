@@ -224,6 +224,66 @@ $scheme-magnolo: $magnolo;
   .pageheader .page-bar .page-breadcrumb > li:not(:first-child) > a:hover {
     color: $active-default!important;
   }
+  .froala-editor, .f-popup-toolbar{
+    background-color:$active-default;
+    border-color:darken($active-default,10%);
+    .fr-dropdown .fr-dropdown-menu {
+      border-width:0px;
+      li{
+        a{
+          color:#fff !important;
+          background-color:$active-default;
+        }
+        &.active a{
+          background:darken($active-default,10%) !important;
+        }
+      }
+    }
+    span.f-sep{
+      border-color:darken($active-default,10%);
+    }
+   button.fr-bttn, button.fr-trigger, {
+     color:rgba(255, 255, 255, 1) ;
+     //color:darken($active-default,10%);
+      &:hover, &.active{
+        color: #fff;
+        background:darken($active-default,10%);
+      }
+      &::after{
+        border-top-color:#fff;
+      }
+      &:disabled{
+        color:darken($active-default,10%) !important;
+      }
+     //color:rgba(255, 255, 255, 0.5);
+   }
+
+  }
+  .froala-wrapper.f-basic{
+    border-color: $active-default;
+    border-top-color:darken($active-default, 10%);
+  }
+  .froala-popup{
+    background:#fff;
+    button.fr-p-bttn.f-ok{
+      background:$active-default;
+    }
+  }
+  .froala-element{
+
+   span.f-img-handle{
+    background-color:darken($active-default, 10%);
+  }
+    span.f-img-editor:before{
+      outline:1px solid darken($active-default, 10%) !important;
+    }
+
+  }
+  .froala-box{
+    &::after{
+      color:$active-default;
+    }
+  }
 }
 .sidebar-sm,
 .sidebar-xs,

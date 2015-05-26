@@ -11777,6 +11777,40 @@ hr.line-full {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); }
 #minovate.greensea-scheme-color .pageheader .page-bar .page-breadcrumb > li:not(:first-child) > a:hover {
   color: #16a085 !important; }
+#minovate.greensea-scheme-color .froala-editor, #minovate.greensea-scheme-color .f-popup-toolbar {
+  background-color: #16a085;
+  border-color: #107360; }
+  #minovate.greensea-scheme-color .froala-editor .fr-dropdown .fr-dropdown-menu, #minovate.greensea-scheme-color .f-popup-toolbar .fr-dropdown .fr-dropdown-menu {
+    border-width: 0px; }
+    #minovate.greensea-scheme-color .froala-editor .fr-dropdown .fr-dropdown-menu li a, #minovate.greensea-scheme-color .f-popup-toolbar .fr-dropdown .fr-dropdown-menu li a {
+      color: #fff !important;
+      background-color: #16a085; }
+    #minovate.greensea-scheme-color .froala-editor .fr-dropdown .fr-dropdown-menu li.active a, #minovate.greensea-scheme-color .f-popup-toolbar .fr-dropdown .fr-dropdown-menu li.active a {
+      background: #107360 !important; }
+  #minovate.greensea-scheme-color .froala-editor span.f-sep, #minovate.greensea-scheme-color .f-popup-toolbar span.f-sep {
+    border-color: #107360; }
+  #minovate.greensea-scheme-color .froala-editor button.fr-bttn, #minovate.greensea-scheme-color .froala-editor button.fr-trigger, #minovate.greensea-scheme-color .f-popup-toolbar button.fr-bttn, #minovate.greensea-scheme-color .f-popup-toolbar button.fr-trigger {
+    color: white; }
+    #minovate.greensea-scheme-color .froala-editor button.fr-bttn:hover, #minovate.greensea-scheme-color .froala-editor button.fr-bttn.active, #minovate.greensea-scheme-color .froala-editor button.fr-trigger:hover, #minovate.greensea-scheme-color .froala-editor button.fr-trigger.active, #minovate.greensea-scheme-color .f-popup-toolbar button.fr-bttn:hover, #minovate.greensea-scheme-color .f-popup-toolbar button.fr-bttn.active, #minovate.greensea-scheme-color .f-popup-toolbar button.fr-trigger:hover, #minovate.greensea-scheme-color .f-popup-toolbar button.fr-trigger.active {
+      color: #fff;
+      background: #107360; }
+    #minovate.greensea-scheme-color .froala-editor button.fr-bttn::after, #minovate.greensea-scheme-color .froala-editor button.fr-trigger::after, #minovate.greensea-scheme-color .f-popup-toolbar button.fr-bttn::after, #minovate.greensea-scheme-color .f-popup-toolbar button.fr-trigger::after {
+      border-top-color: #fff; }
+    #minovate.greensea-scheme-color .froala-editor button.fr-bttn:disabled, #minovate.greensea-scheme-color .froala-editor button.fr-trigger:disabled, #minovate.greensea-scheme-color .f-popup-toolbar button.fr-bttn:disabled, #minovate.greensea-scheme-color .f-popup-toolbar button.fr-trigger:disabled {
+      color: #107360 !important; }
+#minovate.greensea-scheme-color .froala-wrapper.f-basic {
+  border-color: #16a085;
+  border-top-color: #107360; }
+#minovate.greensea-scheme-color .froala-popup {
+  background: #fff; }
+  #minovate.greensea-scheme-color .froala-popup button.fr-p-bttn.f-ok {
+    background: #16a085; }
+#minovate.greensea-scheme-color .froala-element span.f-img-handle {
+  background-color: #107360; }
+#minovate.greensea-scheme-color .froala-element span.f-img-editor:before {
+  outline: 1px solid #107360 !important; }
+#minovate.greensea-scheme-color .froala-box::after {
+  color: #16a085; }
 
 .sidebar-sm #sidebar.scheme-greensea #navigation li.dropdown > ul, .sidebar-sm #sidebar.scheme-greensea #navigation li.submenu > ul,
 .sidebar-xs #sidebar.scheme-greensea #navigation li.dropdown > ul,

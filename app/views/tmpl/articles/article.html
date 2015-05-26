@@ -11,19 +11,21 @@
 
     </h2>
     <md-button type="submit" class="pull-right md-primary md-raised md-full br-0" ng-disabled="articleForm.$invalid">Speichern</md-button>
-
-
   </div>
   <!-- /page header -->
   <!-- page content -->
   <div class="pagecontent">
     <form name="articleForm" class="anim full-height" submit-validate ng-submit="submitForm(articleForm.$valid)" role="form" novalidate>
-
-      <section class="tile col-md-9">
-
-        <!-- tile body -->
-        <div class="tile-body form-validation row">
-          <md-input-container class="input-elg col-md-12">
+      <!-- row -->
+      <div class="row">
+        <!-- col -->
+        <div class="col-md-6">
+      <section class="tile ">
+        <div class="tile-header dvd dvd-btm bg-greensea">
+          <h1 class="custom-font"><strong>Basis</strong> Information</h1>
+        </div>
+        <div class="tile-body form-validation">
+          <md-input-container class="input-elg">
             <label>Name</label>
             <input md-maxlength="50" required name="title" ng-model="article.title">
             <div ng-messages="articleForm.title.$error">
@@ -31,29 +33,68 @@
               <div ng-message="md-maxlength">Der Name darf aus maximal 50 Zeichen bestehen.</div>
             </div>
           </md-input-container>
-          <md-input-container flex class="col-md-12">
+          <md-input-container flex>
             <label>Einleitung</label>
             <textarea ng-model="article.intro" md-maxlength="150"></textarea>
           </md-input-container>
         </div>
       </section>
-      <section class="tile col-md-3">
-
+    </div>
+    <div class="col-md-3">
+      <section class="tile">
+        <div class="tile-header dvd dvd-btm bg-greensea">
+          <h1 class="custom-font"><strong>Kategorien</strong></h1>
+        </div>
         <!-- tile body -->
-        <div class="tile-body form-validation row">
-          <md-switch class="md-accent col-md-12" md-no-ink aria-label="Veröffentlicht" ng-model="article.is_online">
-            Online
+        <div class="tile-body form-validation p-0">
+          <md-input-container class="input-lg anim">
+            <md-select ng-model="item.page" required placeholder="Kategorie auswählen" multiple="true">
+              <md-optgroup label="Kategorien">
+                <md-option ng-value="categorie" ng-repeat="categorie in categories ">{{categorie.name}}</md-option>
+              </md-optgroup>
+            </md-select>
+            <p class="md-caption" ng-if="!article.categories">Wähle hier die Seite zur Verknüpfung aus</p>
+          </md-input-container>
+        </div>
+      </section>
+    </div>
+    <div class="col-md-3">
+      <section class="tile">
+        <div class="tile-header dvd dvd-btm bg-greensea">
+          <h1 class="custom-font"><strong>Veröffentlicht</strong></h1>
+        </div>
+        <!-- tile body -->
+        <div class="tile-body form-validation">
+          <div class="row">
+            <div class="col-md-4">
+          <md-switch class="md-primary " md-no-ink aria-label="Veröffentlicht" ng-model="article.is_online"  ng-true-value="1" ng-false-value="0">
+            <span ng-if="article.is_online">Ja</span>
+            <span ng-if="!article.is_online">Nein</span>
           </md-switch>
-          <md-input-container flex class="col-md-12">
-            <label>Datum online</label>
+        </div>
+        <div class="col-md89">
+          <md-input-container  >
+            <label>ab wann?</label>
             <input type="date" required name="online_at" ng-model="article.online_at">
             <div ng-messages="articleForm.online_at.$error">
               <div ng-message="required">Dies ist ein Pflichtfeld.</div>
             </div>
           </md-input-container>
-
+</div>
         </div>
       </section>
+    </div>
+    <div class="col-md-12">
+      <section class="tile">
+        <div class="tile-header dvd bg-greensea">
+          <h1 class="custom-font"><strong>Inhalt</strong></h1>
+        </div>
+        <!-- tile body -->
+        <div class="tile-body form-validation p-0">
+            <textarea froala ng-model="article.text"></textarea>
+        </div>
+      </section>
+    </div>
     </form>
   </div>
 
