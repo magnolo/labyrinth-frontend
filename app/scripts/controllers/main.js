@@ -8,7 +8,7 @@
  * Controller of the minovateApp
  */
 angular.module('minovateApp')
-  .controller('MainCtrl', function($scope, $http) {
+  .controller('MainCtrl', function($scope, $http, $location, $localStorage, Auth) {
 
     $scope.main = {
       title: 'Labyrinth',
@@ -23,7 +23,27 @@ angular.module('minovateApp')
         helpbarShow: false
       }
     };
+    function successAuth(res){
+      $localStorage.token = res.token;
+      window.location =  "/";
+    }
+    $scope.signin = function (){
+      var fromData = {
+        email: $scope.email,
+        password: $scope.password
+      };
 
+      Auth.signin( formData, successAuth, function(){
+        $rootScope.error = 'Invalid crdentials';
+      })
+    }
+    $scope.token = $localStorage.token;
+    $scope.tokenClaims = Auth.getTokenClaims();
+    $scope.logout = function(){
+      Auth.logout(function(){
+        window.location = "/";
+      });
+    };
 
     $scope.toggleInfo = function(name) {
       if ($scope.infoTile && $scope.infoTile === name) {

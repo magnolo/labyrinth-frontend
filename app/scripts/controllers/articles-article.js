@@ -13,10 +13,24 @@ angular.module('minovateApp')
       title: 'Der Arikeltext',
       subtitle: 'Artikel'
     };
+
     $scope.article = Article.find({
       id: $stateParams.id
     }, function(data) {
       $scope.page.title = $scope.article.title;
     });
     $scope.categories = Categorie.get();
+    $scope.save = function(data){
+      if($scope.article.id){
+        Article.update({
+          id: $scope.article.id
+        },$scope.article, function(response){
+
+        })
+
+      }
+      else{
+
+      }
+    };
   });

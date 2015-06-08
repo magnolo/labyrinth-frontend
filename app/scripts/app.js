@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-angular
+var app = angular
   .module('minovateApp', [
     'ngAnimate',
     'ngCookies',
@@ -17,6 +17,7 @@ angular
     'ngTouch',
     'ngMaterial',
     'ngMessages',
+    'ngStorage',
     'picardy.fontawesome',
     'ui.bootstrap',
     'ui.router',
@@ -56,6 +57,10 @@ angular
     'froala',
     'ui.sortable'
   ])
+  .constant('urls', {
+      BASE: 'localhost:9000',
+      BASE_API: 'http://localhost:8000/api'
+  })
   .run(['$rootScope', '$state', '$stateParams', function($rootScope, $state, $stateParams) {
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
@@ -99,6 +104,26 @@ angular
     $mdThemingProvider.theme('default')
       .primaryPalette('greenIt');
   })
+  .config(['$httpProvider', function($httpProvider){
+    $httpProvider.interceptors.push(['$q', '$location', '$localStorage', function($q, $location, $localStorage){
+      return{
+        'request': function(config){
+          config.headers = config.headers || {};
+          if($localStorage.token){
+            config.headers.Authorization = 'Labyrinth '+ $localStorage.token;
+          }
+          return config;
+        },
+        'repsonseError': function(response){
+          if(response.status === 401 || response.status === 403){
+            $location.path('/login');
+          }
+          return $q.reject(response);
+        }
+
+      }
+    }])
+  }])
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/app/dashboard');
